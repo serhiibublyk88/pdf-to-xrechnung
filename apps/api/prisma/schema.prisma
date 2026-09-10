@@ -1,0 +1,136 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum InvoiceStatus {
+  UPLOADED
+  EXTRACTING_TEXT
+  TEXT_READY
+  EXTRACTING_DATA
+  DATA_READY
+  VALIDATING
+  NEEDS_REVIEW
+  GENERATING
+  GENERATING_DOCUMENT
+  READY
+  FAILED
+}
+
+enum SourceType {
+  NATIVE
+  OCR
+  UNKNOWN
+}
+
+enum Severity {
+  ERROR
+  WARNING
+  INFO
+}
+
+enum DocumentFormat {
+  XRECHNUNG_UBL
+}
+
+model Invoice {
+  id         String        @id @default(uuid())
+  ownerId    String
+  status     InvoiceStatus @default(UPLOADED)
+  sourceType SourceType    @default(UNKNOWN)
+
+  fileHash         String
+  storageKey       String @unique
+  originalFilename String
+  fileSizeBytes    Int
+  pageCount        Int?
+
+  extractedText String? @db.Text
+  textCharCount Int?
+  reviewedData  Json?
+
+  failureCode   String?
+  failureParams Json?
+  reviewedAt    DateTime?
+  reviewVersion Int           @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  expiresAt DateTime
+
+  attempts    ExtractionAttempt[]
+  validations ValidationResult[]
+  documents   GeneratedDocument[]
+
+  @@unique([ownerId, fileHash])
+  @@index([expiresAt])
+  @@index([status])
+  @@index([ownerId, createdAt])
+}
+
+model PendingStorageDeletion {
+  storageKey String   @id
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model ExtractionAttempt {
+  id         String  @id @default(uuid())
+  invoiceId  String
+  storageKey String
+  invoice    Invoice @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+
+  attemptNumber Int
+  provider      String
+  model         String
+  promptVersion String
+
+  rawResponse String  @db.Text
+  parsedData  Json?
+  parseError  String?
+
+  durationMs   Int
+  inputTokens  Int?
+  outputTokens Int?
+
+  createdAt DateTime @default(now())
+
+  @@unique([invoiceId, storageKey, attemptNumber])
+  @@index([invoiceId, storageKey, provider, model, promptVersion])
+}
+
+model ValidationResult {
+  id        String  @id @default(uuid())
+  invoiceId String
+  invoice   Invoice @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+
+  rule     String
+  field    String?
+  severity Severity
+  passed   Boolean
+  message  String
+  expected String?
+  actual   String?
+
+  createdAt DateTime @default(now())
+
+  @@index([invoiceId])
+}
+
+model GeneratedDocument {
+  id        String  @id @default(uuid())
+  invoiceId String
+  invoice   Invoice @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+
+  format      DocumentFormat
+  xml         String         @db.Text
+  isValid     Boolean
+  kositReport Json?
+
+  createdAt DateTime @default(now())
+
+  @@index([invoiceId])
+}

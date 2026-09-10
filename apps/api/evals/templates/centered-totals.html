@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="{{LANGUAGE}}">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @page {
+        size: A4;
+        margin: 20mm;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        color: #292524;
+        font:
+          11px/1.5 Georgia,
+          serif;
+        margin: 0;
+      }
+      h1 {
+        font-size: 27px;
+        margin: 0 0 10px;
+        text-align: center;
+      }
+      h2 {
+        font-size: 12px;
+        margin: 0 0 5px;
+      }
+      header {
+        border-bottom: 1px solid #a16207;
+        margin-bottom: 18px;
+        padding-bottom: 10px;
+        text-align: center;
+      }
+      .parties {
+        display: grid;
+        gap: 28px;
+        grid-template-columns: 1fr 1fr;
+        margin: 18px 0;
+      }
+      .metadata {
+        display: grid;
+        gap: 5px 22px;
+        grid-template-columns: max-content 1fr;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th {
+        background: #fef3c7;
+        text-align: left;
+      }
+      th,
+      td {
+        border-bottom: 1px solid #d6d3d1;
+        padding: 7px 6px;
+        vertical-align: top;
+      }
+      .number {
+        text-align: right;
+        white-space: nowrap;
+      }
+      .totals {
+        margin: 24px auto;
+        width: 54%;
+      }
+      .totals td {
+        border: 0;
+        padding: 4px 0;
+      }
+      .gross td {
+        border-top: 2px solid #a16207;
+        font-size: 14px;
+        font-weight: 700;
+        padding-top: 7px;
+      }
+      .page-break {
+        break-before: page;
+      }
+      .footer {
+        color: #57534e;
+        font-size: 9px;
+        margin-top: 28px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    {{BODY}}
+  </body>
+</html>

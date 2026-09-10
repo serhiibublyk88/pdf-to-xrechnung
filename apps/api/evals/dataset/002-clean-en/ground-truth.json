@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "id": "002-clean-en",
+    "language": "en",
+    "sourceType": "native",
+    "content": "invoice",
+    "pages": 1,
+    "expectedOutcome": "success",
+    "expectedErrors": [],
+    "notes": "English cross-border invoice with an explicit reverse-charge (VAT category AE) reason."
+  },
+  "data": {
+    "invoiceNumber": "INV-2026-0007",
+    "issueDate": "2026-08-08",
+    "dueDate": "2026-09-07",
+    "deliveryDate": "2026-07-31",
+    "currency": "USD",
+    "seller": {
+      "name": "Acme Consulting Ltd",
+      "street": "1 Example Street",
+      "postalCode": "EC1A 1BB",
+      "city": "London",
+      "countryCode": "GB",
+      "vatId": "GB123456789",
+      "taxNumber": null,
+      "electronicAddress": "seller-002@example.test",
+      "electronicAddressScheme": "EM",
+      "contactName": "Alice Smith",
+      "contactEmail": "billing@acme.example",
+      "contactPhone": "+44 20 7946 0018"
+    },
+    "buyer": {
+      "name": "Deutsche Einkauf GmbH",
+      "street": "Marktstrasse 5",
+      "postalCode": "10115",
+      "city": "Berlin",
+      "countryCode": "DE",
+      "vatId": "DE811907980",
+      "taxNumber": null,
+      "electronicAddress": "buyer-002@example.test",
+      "electronicAddressScheme": "EM",
+      "contactName": null,
+      "contactEmail": "ap@deutsche-einkauf.example",
+      "contactPhone": null
+    },
+    "sellerIban": "GB29NWBK60161331926819",
+    "sellerBic": null,
+    "lineItems": [
+      {
+        "position": 1,
+        "description": "Consulting services, July 2026",
+        "quantity": "10",
+        "unit": "hours",
+        "unitPrice": "150.00",
+        "netAmount": "1500.00",
+        "vatRate": "0",
+        "vatExemptionReason": "Reverse charge"
+      }
+    ],
+    "netTotal": "1500.00",
+    "vatBreakdown": [
+      {
+        "rate": "0",
+        "base": "1500.00",
+        "amount": "0.00",
+        "category": "AE",
+        "exemptionReason": "Reverse charge"
+      }
+    ],
+    "vatTotal": "0.00",
+    "grossTotal": "1500.00",
+    "paymentTerms": null,
+    "buyerReference": "PO-DE-7781"
+  }
+}

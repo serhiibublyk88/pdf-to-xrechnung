@@ -1,0 +1,375 @@
+{
+  "meta": {
+    "id": "007-many-lines-de",
+    "language": "de",
+    "sourceType": "native",
+    "content": "invoice",
+    "pages": 3,
+    "expectedOutcome": "success",
+    "expectedErrors": [],
+    "notes": "Thirty-one line items exercise context length and positional line accuracy."
+  },
+  "data": {
+    "invoiceNumber": "RE-2026-0007",
+    "issueDate": "2026-08-10",
+    "dueDate": "2026-09-09",
+    "deliveryDate": "2026-08-09",
+    "currency": "EUR",
+    "seller": {
+      "name": "Mengen GmbH",
+      "street": "Listenweg 7",
+      "postalCode": "10115",
+      "city": "Berlin",
+      "countryCode": "DE",
+      "vatId": "DE136695976",
+      "taxNumber": null,
+      "electronicAddress": "seller-007@example.test",
+      "electronicAddressScheme": "EM",
+      "contactName": "Anna Mengen",
+      "contactEmail": "rechnung@mengen.example",
+      "contactPhone": "+49 30 1234567"
+    },
+    "buyer": {
+      "name": "Kaeufer AG",
+      "street": "Kaeuferweg 5",
+      "postalCode": "80331",
+      "city": "Muenchen",
+      "countryCode": "DE",
+      "vatId": null,
+      "taxNumber": null,
+      "electronicAddress": "buyer-007@example.test",
+      "electronicAddressScheme": "EM",
+      "contactName": null,
+      "contactEmail": "buchhaltung@kaeufer.example",
+      "contactPhone": null
+    },
+    "sellerIban": "DE89370400440532013000",
+    "sellerBic": null,
+    "lineItems": [
+      {
+        "position": 1,
+        "description": "Service 01",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 2,
+        "description": "Service 02",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 3,
+        "description": "Service 03",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 4,
+        "description": "Service 04",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 5,
+        "description": "Service 05",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 6,
+        "description": "Service 06",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 7,
+        "description": "Service 07",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 8,
+        "description": "Service 08",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 9,
+        "description": "Service 09",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 10,
+        "description": "Service 10",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 11,
+        "description": "Service 11",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 12,
+        "description": "Service 12",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 13,
+        "description": "Service 13",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 14,
+        "description": "Service 14",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 15,
+        "description": "Service 15",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 16,
+        "description": "Service 16",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 17,
+        "description": "Service 17",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 18,
+        "description": "Service 18",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 19,
+        "description": "Service 19",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 20,
+        "description": "Service 20",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 21,
+        "description": "Service 21",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 22,
+        "description": "Service 22",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 23,
+        "description": "Service 23",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 24,
+        "description": "Service 24",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 25,
+        "description": "Service 25",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 26,
+        "description": "Service 26",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 27,
+        "description": "Service 27",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 28,
+        "description": "Service 28",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 29,
+        "description": "Service 29",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 30,
+        "description": "Service 30",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 31,
+        "description": "Service 31",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "10.00",
+        "netAmount": "10.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      }
+    ],
+    "netTotal": "310.00",
+    "vatBreakdown": [
+      {
+        "rate": "19",
+        "base": "310.00",
+        "amount": "58.90",
+        "category": null,
+        "exemptionReason": null
+      }
+    ],
+    "vatTotal": "58.90",
+    "grossTotal": "368.90",
+    "paymentTerms": "Payable within 30 days.",
+    "buyerReference": "PO-2026-0047"
+  }
+}

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="{{LANGUAGE}}">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @page {
+        size: A4;
+        margin: 22mm 17mm;
+        @top-center {
+          content: '{{HEADER}}';
+          color: #64748b;
+          font:
+            9px Arial,
+            sans-serif;
+        }
+        @bottom-center {
+          content: '{{FOOTER}}';
+          color: #64748b;
+          font:
+            9px Arial,
+            sans-serif;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        color: #0f172a;
+        font:
+          11px/1.45 Arial,
+          sans-serif;
+        margin: 0;
+      }
+      h1 {
+        font-size: 24px;
+        margin: 0 0 20px;
+      }
+      h2 {
+        font-size: 12px;
+        margin: 0 0 5px;
+      }
+      header {
+        border-bottom: 2px solid #7c3aed;
+        margin-bottom: 20px;
+        padding-bottom: 12px;
+      }
+      .parties {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: 1fr 1fr;
+        margin: 18px 0;
+      }
+      .metadata {
+        display: grid;
+        gap: 5px 22px;
+        grid-template-columns: max-content 1fr;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th {
+        background: #ede9fe;
+        text-align: left;
+      }
+      th,
+      td {
+        border-bottom: 1px solid #d8d4fe;
+        padding: 7px 6px;
+        vertical-align: top;
+      }
+      .number {
+        text-align: right;
+        white-space: nowrap;
+      }
+      .totals {
+        margin-left: auto;
+        margin-top: 18px;
+        width: 46%;
+      }
+      .totals td {
+        border: 0;
+        padding: 3px 0;
+      }
+      .gross td {
+        border-top: 2px solid #7c3aed;
+        font-size: 14px;
+        font-weight: 700;
+        padding-top: 7px;
+      }
+      .page-break {
+        break-before: page;
+      }
+      .footer {
+        color: #64748b;
+        font-size: 9px;
+        margin-top: 28px;
+      }
+    </style>
+  </head>
+  <body>
+    {{BODY}}
+  </body>
+</html>

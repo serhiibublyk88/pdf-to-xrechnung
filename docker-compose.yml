@@ -1,0 +1,96 @@
+x-database-url: &database-url postgresql://${POSTGRES_USER:-pdf_to_xrechnung}:${POSTGRES_PASSWORD:-pdf_to_xrechnung}@postgres:5432/${POSTGRES_DB:-pdf_to_xrechnung}
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-pdf_to_xrechnung}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-pdf_to_xrechnung}
+      POSTGRES_DB: ${POSTGRES_DB:-pdf_to_xrechnung}
+    ports:
+      - '127.0.0.1:5432:5432'
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-pdf_to_xrechnung}']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    ports:
+      - '127.0.0.1:6379:6379'
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  kosit-validator:
+    build:
+      context: ./docker/kosit-validator
+    restart: unless-stopped
+    ports:
+      - '127.0.0.1:8081:8081'
+
+  migrate:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+      target: migrate
+    env_file: .env
+    environment:
+      DATABASE_URL: *database-url
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+      target: api
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      # Local HTTP needs development cookies because production marks them Secure.
+      NODE_ENV: development
+      DATABASE_URL: *database-url
+      REDIS_URL: redis://redis:6379
+      KOSIT_VALIDATOR_URL: http://kosit-validator:8081
+    ports:
+      - '127.0.0.1:3001:3000'
+    volumes:
+      - api-storage:/repo/apps/api/data
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      kosit-validator:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+      args:
+        API_ORIGIN: http://api:3000
+    restart: unless-stopped
+    ports:
+      - '127.0.0.1:3000:3000'
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  postgres-data:
+  redis-data:
+  api-storage:

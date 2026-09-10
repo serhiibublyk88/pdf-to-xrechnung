@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "id": "016-unusable-scan-de",
+    "language": "de",
+    "sourceType": "ocr",
+    "content": "invoice",
+    "scanQuality": "blank",
+    "pages": 1,
+    "expectedOutcome": "failed",
+    "expectedErrors": [],
+    "notes": "A blank image-only PDF is refused because OCR cannot recognise enough text."
+  },
+  "data": {
+    "invoiceNumber": null,
+    "issueDate": null,
+    "dueDate": null,
+    "deliveryDate": null,
+    "currency": null,
+    "seller": {
+      "name": null,
+      "street": null,
+      "postalCode": null,
+      "city": null,
+      "countryCode": null,
+      "vatId": null,
+      "taxNumber": null,
+      "electronicAddress": null,
+      "electronicAddressScheme": null,
+      "contactName": null,
+      "contactEmail": null,
+      "contactPhone": null
+    },
+    "buyer": {
+      "name": null,
+      "street": null,
+      "postalCode": null,
+      "city": null,
+      "countryCode": null,
+      "vatId": null,
+      "taxNumber": null,
+      "electronicAddress": null,
+      "electronicAddressScheme": null,
+      "contactName": null,
+      "contactEmail": null,
+      "contactPhone": null
+    },
+    "sellerIban": null,
+    "sellerBic": null,
+    "lineItems": [],
+    "netTotal": null,
+    "vatBreakdown": [],
+    "vatTotal": null,
+    "grossTotal": null,
+    "paymentTerms": null,
+    "buyerReference": null
+  }
+}

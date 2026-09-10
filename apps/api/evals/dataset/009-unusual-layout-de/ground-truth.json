@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "id": "009-unusual-layout-de",
+    "language": "de",
+    "sourceType": "native",
+    "content": "invoice",
+    "pages": 1,
+    "expectedOutcome": "success",
+    "expectedErrors": [],
+    "notes": "The totals are deliberately centred below the line table rather than placed at bottom right."
+  },
+  "data": {
+    "invoiceNumber": "RE-2026-0009",
+    "issueDate": "2026-08-11",
+    "dueDate": "2026-09-10",
+    "deliveryDate": "2026-08-10",
+    "currency": "EUR",
+    "seller": {
+      "name": "Layout GmbH",
+      "street": "Musterallee 9",
+      "postalCode": "10115",
+      "city": "Berlin",
+      "countryCode": "DE",
+      "vatId": "DE136695976",
+      "taxNumber": null,
+      "electronicAddress": "seller-009@example.test",
+      "electronicAddressScheme": "EM",
+      "contactName": "Anna Layout",
+      "contactEmail": "rechnung@layout.example",
+      "contactPhone": "+49 30 1234567"
+    },
+    "buyer": {
+      "name": "Kaeufer AG",
+      "street": "Kaeuferweg 5",
+      "postalCode": "80331",
+      "city": "Muenchen",
+      "countryCode": "DE",
+      "vatId": null,
+      "taxNumber": null,
+      "electronicAddress": "buyer-009@example.test",
+      "electronicAddressScheme": "EM",
+      "contactName": null,
+      "contactEmail": "buchhaltung@kaeufer.example",
+      "contactPhone": null
+    },
+    "sellerIban": "DE89370400440532013000",
+    "sellerBic": null,
+    "lineItems": [
+      {
+        "position": 1,
+        "description": "Layout review",
+        "quantity": "2",
+        "unit": "Stunde",
+        "unitPrice": "80.00",
+        "netAmount": "160.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      }
+    ],
+    "netTotal": "160.00",
+    "vatBreakdown": [
+      {
+        "rate": "19",
+        "base": "160.00",
+        "amount": "30.40",
+        "category": null,
+        "exemptionReason": null
+      }
+    ],
+    "vatTotal": "30.40",
+    "grossTotal": "190.40",
+    "paymentTerms": "Payable within 30 days.",
+    "buyerReference": "PO-2026-0049"
+  }
+}

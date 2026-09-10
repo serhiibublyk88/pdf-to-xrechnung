@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "id": "014-long-descriptions-en",
+    "language": "en",
+    "sourceType": "native",
+    "content": "invoice",
+    "pages": 1,
+    "expectedOutcome": "success",
+    "expectedErrors": [],
+    "notes": "Long free-text line descriptions exercise truncation without fuzzy scoring."
+  },
+  "data": {
+    "invoiceNumber": "INV-2026-0014",
+    "issueDate": "2026-08-13",
+    "dueDate": "2026-09-12",
+    "deliveryDate": "2026-08-12",
+    "currency": "EUR",
+    "seller": {
+      "name": "Narrative Ltd",
+      "street": "14 Long Description Road",
+      "postalCode": "EC1A 1BB",
+      "city": "London",
+      "countryCode": "GB",
+      "vatId": "GB123456789",
+      "taxNumber": null,
+      "electronicAddress": "seller-014@example.test",
+      "electronicAddressScheme": "EM",
+      "contactName": "Alice Narrative",
+      "contactEmail": "billing@narrative.example",
+      "contactPhone": "+44 20 7946 0018"
+    },
+    "buyer": {
+      "name": "Kaeufer AG",
+      "street": "Kaeuferweg 5",
+      "postalCode": "80331",
+      "city": "Muenchen",
+      "countryCode": "DE",
+      "vatId": null,
+      "taxNumber": null,
+      "electronicAddress": "buyer-014@example.test",
+      "electronicAddressScheme": "EM",
+      "contactName": null,
+      "contactEmail": "buchhaltung@kaeufer.example",
+      "contactPhone": null
+    },
+    "sellerIban": "DE89370400440532013000",
+    "sellerBic": null,
+    "lineItems": [
+      {
+        "position": 1,
+        "description": "Detailed advisory work covering discovery workshops, stakeholder interviews, architecture options, delivery risks, written recommendations, and the agreed implementation roadmap for the 2026 programme.",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "500.00",
+        "netAmount": "500.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      }
+    ],
+    "netTotal": "500.00",
+    "vatBreakdown": [
+      {
+        "rate": "19",
+        "base": "500.00",
+        "amount": "95.00",
+        "category": null,
+        "exemptionReason": null
+      }
+    ],
+    "vatTotal": "95.00",
+    "grossTotal": "595.00",
+    "paymentTerms": "Payment within 30 days.",
+    "buyerReference": "PO-2026-0054"
+  }
+}

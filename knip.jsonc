@@ -1,0 +1,27 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  // AssertNever exports are compile-time-only; kept exported since ESLint rejects an unused local alias.
+  "tags": ["-knipignore"],
+  "workspaces": {
+    ".": {
+      // Run only by `node --test`, not imported from application or config code.
+      "entry": ["eslint-rules/*.spec.mjs"],
+    },
+    "apps/api": {
+      "jest": {
+        "config": [
+          "package.json",
+          "test/jest-e2e.json",
+          "test/jest-integration.json",
+        ],
+        "entry": [
+          "**/?(*.)+(spec|test).?(c|m)[jt]s?(x)",
+          "test/**/*.e2e-spec.ts",
+          "test/**/*.integration-spec.ts",
+        ],
+      },
+      // Resolved by name at runtime (pino's transport) or ambient-only (Multer's Express augmentation) — never imported.
+      "ignoreDependencies": ["pino-pretty", "@types/multer"],
+    },
+  },
+}

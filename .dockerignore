@@ -1,0 +1,25 @@
+# `.env` alone only matches the context root — apps/api/.env needs `**/.env`.
+
+**/.git
+**/node_modules
+**/dist
+**/.next
+**/*.tsbuildinfo
+**/coverage
+
+**/.env
+**/.env.*
+apps/api/data
+
+**/test_invoices
+**/test-results
+**/playwright-report
+**/blob-report
+apps/api/evals/results
+
+**/*.log
+**/logs
+**/.cache
+**/.DS_Store
+**/.idea
+**/.vscode

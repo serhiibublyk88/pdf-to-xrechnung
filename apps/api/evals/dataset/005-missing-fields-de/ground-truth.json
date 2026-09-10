@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "id": "005-missing-fields-de",
+    "language": "de",
+    "sourceType": "native",
+    "content": "invoice",
+    "pages": 1,
+    "expectedOutcome": "needs_review",
+    "expectedErrors": [
+      "mandatory.gross_total",
+      "mandatory.invoice_number",
+      "mandatory.seller_tax_id"
+    ],
+    "notes": "Structurally valid extraction with three missing mandatory values."
+  },
+  "data": {
+    "invoiceNumber": null,
+    "issueDate": "2026-08-08",
+    "dueDate": "2026-09-07",
+    "deliveryDate": null,
+    "currency": "EUR",
+    "seller": {
+      "name": "Muster GmbH",
+      "street": "Musterstrasse 1",
+      "postalCode": "10115",
+      "city": "Berlin",
+      "countryCode": "DE",
+      "vatId": null,
+      "taxNumber": null,
+      "electronicAddress": "seller-005@example.test",
+      "electronicAddressScheme": "EM",
+      "contactName": "Anna Muster",
+      "contactEmail": "rechnung@muster.example",
+      "contactPhone": "+49 30 1234567"
+    },
+    "buyer": {
+      "name": "Kaeufer AG",
+      "street": "Kaeuferweg 5",
+      "postalCode": "80331",
+      "city": "Muenchen",
+      "countryCode": "DE",
+      "vatId": null,
+      "taxNumber": null,
+      "electronicAddress": "buyer-005@example.test",
+      "electronicAddressScheme": "EM",
+      "contactName": null,
+      "contactEmail": "buchhaltung@kaeufer.example",
+      "contactPhone": null
+    },
+    "sellerIban": null,
+    "sellerBic": null,
+    "lineItems": [
+      {
+        "position": 1,
+        "description": "Beratungsleistung",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "100.00",
+        "netAmount": "100.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      }
+    ],
+    "netTotal": "100.00",
+    "vatBreakdown": [
+      {
+        "rate": "19",
+        "base": "100.00",
+        "amount": "19.00",
+        "category": null,
+        "exemptionReason": null
+      }
+    ],
+    "vatTotal": "19.00",
+    "grossTotal": null,
+    "paymentTerms": null,
+    "buyerReference": "PO-2026-0045"
+  }
+}

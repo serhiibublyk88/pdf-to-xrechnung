@@ -1,0 +1,34 @@
+{
+  "name": "pdf-to-xrechnung",
+  "version": "0.0.1",
+  "description": "PDF invoice -> LLM extraction -> deterministic validation -> XRechnung (EN 16931)",
+  "author": "Serhii Bublyk",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "postinstall": "npm run build -w packages/contracts",
+    "build": "npm run build -w packages/contracts && npm run build -w apps/api && API_ORIGIN=${API_ORIGIN:-http://localhost:3000} npm run build -w apps/web",
+    "lint": "npm run lint -w packages/contracts && npm run lint -w apps/api && npm run lint -w apps/web",
+    "lint:fix": "npm run lint:fix -w packages/contracts && npm run lint:fix -w apps/api && npm run lint:fix -w apps/web",
+    "knip": "knip",
+    "typecheck": "npm run typecheck -w packages/contracts && npm run typecheck -w apps/api && npm run typecheck -w apps/web",
+    "test:repo-rules": "node --test eslint-rules/*.spec.mjs",
+    "test": "npm run test:repo-rules && npm run test -w packages/contracts && npm run test -w apps/api && npm run test -w apps/web",
+    "test:integration": "npm run test:integration -w apps/api",
+    "test:e2e": "npm run test:e2e -w apps/api",
+    "eval:generate": "npm run eval:generate -w apps/api",
+    "eval": "npm run eval -w apps/api",
+    "eval:validate": "npm run eval:validate -w apps/api"
+  },
+  "devDependencies": {
+    "eslint": "^9.18.0",
+    "knip": "^6.32.2"
+  }
+}

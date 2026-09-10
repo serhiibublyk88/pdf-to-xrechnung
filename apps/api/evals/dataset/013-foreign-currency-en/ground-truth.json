@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "id": "013-foreign-currency-en",
+    "language": "en",
+    "sourceType": "native",
+    "content": "invoice",
+    "pages": 1,
+    "expectedOutcome": "success",
+    "expectedErrors": [],
+    "notes": "Foreign-currency invoice with a positive VAT rate."
+  },
+  "data": {
+    "invoiceNumber": "CHF-2026-0013",
+    "issueDate": "2026-08-12",
+    "dueDate": "2026-09-11",
+    "deliveryDate": "2026-08-11",
+    "currency": "CHF",
+    "seller": {
+      "name": "Alpine Services AG",
+      "street": "Bahnhofstrasse 13",
+      "postalCode": "8001",
+      "city": "Zurich",
+      "countryCode": "CH",
+      "vatId": "CHE123456789",
+      "taxNumber": null,
+      "electronicAddress": "seller-013@example.test",
+      "electronicAddressScheme": "EM",
+      "contactName": "Alice Alpine",
+      "contactEmail": "billing@alpine.example",
+      "contactPhone": "+41 44 123 45 67"
+    },
+    "buyer": {
+      "name": "Kaeufer AG",
+      "street": "Kaeuferweg 5",
+      "postalCode": "80331",
+      "city": "Muenchen",
+      "countryCode": "DE",
+      "vatId": null,
+      "taxNumber": null,
+      "electronicAddress": "buyer-013@example.test",
+      "electronicAddressScheme": "EM",
+      "contactName": null,
+      "contactEmail": "buchhaltung@kaeufer.example",
+      "contactPhone": null
+    },
+    "sellerIban": "CH9300762011623852957",
+    "sellerBic": "POFICHBEXXX",
+    "lineItems": [
+      {
+        "position": 1,
+        "description": "Swiss consulting service",
+        "quantity": "1",
+        "unit": "Stunde",
+        "unitPrice": "100.00",
+        "netAmount": "100.00",
+        "vatRate": "8.1",
+        "vatExemptionReason": null
+      }
+    ],
+    "netTotal": "100.00",
+    "vatBreakdown": [
+      {
+        "rate": "8.1",
+        "base": "100.00",
+        "amount": "8.10",
+        "category": null,
+        "exemptionReason": null
+      }
+    ],
+    "vatTotal": "8.10",
+    "grossTotal": "108.10",
+    "paymentTerms": "Payment within 30 days.",
+    "buyerReference": "PO-2026-0053"
+  }
+}

@@ -1,0 +1,45 @@
+# Secrets / environment variables
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+secrets/
+credentials/
+credentials.json
+service-account*.json
+# Node.js / TypeScript
+node_modules/
+dist/
+build/
+.next/
+out/
+*.tsbuildinfo
+npm-debug.log*
+# Coverage
+coverage/
+# IDE / editors
+.idea/
+.vscode/
+*.swp
+# macOS
+.DS_Store
+# Logs / temporary files
+*.log
+logs/
+tmp/
+temp/
+.cache/
+# Local uploads / generated files
+uploads/
+output/
+outputs/
+test_invoices/
+# Playwright
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/

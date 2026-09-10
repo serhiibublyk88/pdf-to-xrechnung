@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "id": "003-multipage-de",
+    "language": "de",
+    "sourceType": "native",
+    "content": "invoice",
+    "pages": 2,
+    "expectedOutcome": "success",
+    "expectedErrors": [],
+    "notes": "Line items continue across a page boundary."
+  },
+  "data": {
+    "invoiceNumber": "RE-2026-0003",
+    "issueDate": "2026-08-08",
+    "dueDate": "2026-09-07",
+    "deliveryDate": null,
+    "currency": "EUR",
+    "seller": {
+      "name": "Muster GmbH",
+      "street": "Musterstrasse 1",
+      "postalCode": "10115",
+      "city": "Berlin",
+      "countryCode": "DE",
+      "vatId": "DE136695976",
+      "taxNumber": null,
+      "electronicAddress": "seller-003@example.test",
+      "electronicAddressScheme": "EM",
+      "contactName": "Anna Muster",
+      "contactEmail": "rechnung@muster.example",
+      "contactPhone": "+49 30 1234567"
+    },
+    "buyer": {
+      "name": "Kaeufer AG",
+      "street": "Kaeuferweg 5",
+      "postalCode": "80331",
+      "city": "Muenchen",
+      "countryCode": "DE",
+      "vatId": null,
+      "taxNumber": null,
+      "electronicAddress": "buyer-003@example.test",
+      "electronicAddressScheme": "EM",
+      "contactName": null,
+      "contactEmail": "buchhaltung@kaeufer.example",
+      "contactPhone": null
+    },
+    "sellerIban": "DE89370400440532013000",
+    "sellerBic": null,
+    "lineItems": [
+      {
+        "position": 1,
+        "description": "Beratung Woche 1",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "500.00",
+        "netAmount": "500.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 2,
+        "description": "Beratung Woche 2",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "500.00",
+        "netAmount": "500.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      },
+      {
+        "position": 3,
+        "description": "Beratung Woche 3",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "500.00",
+        "netAmount": "500.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      }
+    ],
+    "netTotal": "1500.00",
+    "vatBreakdown": [
+      {
+        "rate": "19",
+        "base": "1500.00",
+        "amount": "285.00",
+        "category": null,
+        "exemptionReason": null
+      }
+    ],
+    "vatTotal": "285.00",
+    "grossTotal": "1785.00",
+    "paymentTerms": null,
+    "buyerReference": "PO-2026-0043"
+  }
+}

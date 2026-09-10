@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "id": "006-document-discount-de",
+    "language": "de",
+    "sourceType": "native",
+    "content": "invoice",
+    "pages": 1,
+    "expectedOutcome": "success",
+    "expectedErrors": [],
+    "notes": "A document-level discount is stated in the payment terms; the raw extraction contract has no allowance field."
+  },
+  "data": {
+    "invoiceNumber": "RE-2026-0006",
+    "issueDate": "2026-08-09",
+    "dueDate": "2026-09-08",
+    "deliveryDate": "2026-08-08",
+    "currency": "EUR",
+    "seller": {
+      "name": "Rabatt GmbH",
+      "street": "Preisweg 6",
+      "postalCode": "10115",
+      "city": "Berlin",
+      "countryCode": "DE",
+      "vatId": "DE136695976",
+      "taxNumber": null,
+      "electronicAddress": "seller-006@example.test",
+      "electronicAddressScheme": "EM",
+      "contactName": "Anna Rabatt",
+      "contactEmail": "rechnung@rabatt.example",
+      "contactPhone": "+49 30 1234567"
+    },
+    "buyer": {
+      "name": "Kaeufer AG",
+      "street": "Kaeuferweg 5",
+      "postalCode": "80331",
+      "city": "Muenchen",
+      "countryCode": "DE",
+      "vatId": null,
+      "taxNumber": null,
+      "electronicAddress": "buyer-006@example.test",
+      "electronicAddressScheme": "EM",
+      "contactName": null,
+      "contactEmail": "buchhaltung@kaeufer.example",
+      "contactPhone": null
+    },
+    "sellerIban": "DE89370400440532013000",
+    "sellerBic": null,
+    "lineItems": [
+      {
+        "position": 1,
+        "description": "Annual support after document discount",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "980.00",
+        "netAmount": "980.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      }
+    ],
+    "netTotal": "980.00",
+    "vatBreakdown": [
+      {
+        "rate": "19",
+        "base": "980.00",
+        "amount": "186.20",
+        "category": null,
+        "exemptionReason": null
+      }
+    ],
+    "vatTotal": "186.20",
+    "grossTotal": "1166.20",
+    "paymentTerms": "A document discount of 20.00 EUR is already included.",
+    "buyerReference": "PO-2026-0046"
+  }
+}

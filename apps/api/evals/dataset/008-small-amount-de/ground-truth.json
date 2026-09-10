@@ -1,0 +1,75 @@
+{
+  "meta": {
+    "id": "008-small-amount-de",
+    "language": "de",
+    "sourceType": "native",
+    "content": "invoice",
+    "pages": 1,
+    "expectedOutcome": "needs_review",
+    "expectedErrors": [],
+    "notes": "Kleinbetragsrechnung with sparse buyer data still requires review for the XRechnung target."
+  },
+  "data": {
+    "invoiceNumber": "RE-2026-0008",
+    "issueDate": "2026-08-10",
+    "dueDate": null,
+    "deliveryDate": "2026-08-10",
+    "currency": "EUR",
+    "seller": {
+      "name": "Klein GmbH",
+      "street": "Markt 8",
+      "postalCode": "10115",
+      "city": "Berlin",
+      "countryCode": "DE",
+      "vatId": "DE136695976",
+      "taxNumber": null,
+      "electronicAddress": "seller-008@example.test",
+      "electronicAddressScheme": "EM",
+      "contactName": "Anna Klein",
+      "contactEmail": "rechnung@klein.example",
+      "contactPhone": "+49 30 1234567"
+    },
+    "buyer": {
+      "name": "Laufkundschaft",
+      "street": null,
+      "postalCode": null,
+      "city": null,
+      "countryCode": null,
+      "vatId": null,
+      "taxNumber": null,
+      "electronicAddress": null,
+      "electronicAddressScheme": null,
+      "contactName": null,
+      "contactEmail": null,
+      "contactPhone": null
+    },
+    "sellerIban": "DE89370400440532013000",
+    "sellerBic": null,
+    "lineItems": [
+      {
+        "position": 1,
+        "description": "Office supplies",
+        "quantity": "1",
+        "unit": "Stueck",
+        "unitPrice": "199.00",
+        "netAmount": "199.00",
+        "vatRate": "19",
+        "vatExemptionReason": null
+      }
+    ],
+    "netTotal": "199.00",
+    "vatBreakdown": [
+      {
+        "rate": "19",
+        "base": "199.00",
+        "amount": "37.81",
+        "category": null,
+        "exemptionReason": null
+      }
+    ],
+    "vatTotal": "37.81",
+    "grossTotal": "236.81",
+    "paymentTerms": "Payable immediately.",
+    "buyerReference": "PO-2026-0048"
+  }
+}

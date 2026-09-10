@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="{{LANGUAGE}}">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @page {
+        size: A4;
+        margin: 13mm;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        color: #1e293b;
+        font:
+          10px/1.3 Arial,
+          sans-serif;
+        margin: 0;
+      }
+      h1 {
+        font-size: 21px;
+        margin: 0;
+      }
+      h2 {
+        font-size: 11px;
+        margin: 0 0 4px;
+      }
+      header {
+        align-items: center;
+        background: #0f766e;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        margin: -13mm -13mm 14px;
+        padding: 13mm;
+      }
+      .parties {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: 1fr 1fr;
+        margin: 14px 0;
+      }
+      .metadata {
+        display: grid;
+        gap: 3px 15px;
+        grid-template-columns: max-content 1fr;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th {
+        background: #ccfbf1;
+        text-align: left;
+      }
+      th,
+      td {
+        border-bottom: 1px solid #cbd5e1;
+        padding: 5px;
+        vertical-align: top;
+      }
+      .number {
+        text-align: right;
+        white-space: nowrap;
+      }
+      .totals {
+        margin-left: auto;
+        margin-top: 12px;
+        width: 42%;
+      }
+      .totals td {
+        border: 0;
+        padding: 2px 0;
+      }
+      .gross td {
+        border-top: 2px solid #0f766e;
+        font-size: 13px;
+        font-weight: 700;
+        padding-top: 5px;
+      }
+      .page-break {
+        break-before: page;
+      }
+      .footer {
+        color: #475569;
+        font-size: 8px;
+        margin-top: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    {{BODY}}
+  </body>
+</html>

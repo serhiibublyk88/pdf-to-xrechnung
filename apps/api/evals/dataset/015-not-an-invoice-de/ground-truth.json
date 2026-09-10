@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "id": "015-not-an-invoice-de",
+    "language": "de",
+    "sourceType": "native",
+    "content": "not-an-invoice",
+    "pages": 1,
+    "expectedOutcome": "failed",
+    "expectedErrors": [],
+    "notes": "A contract is intentionally refused rather than treated as a sparse invoice."
+  },
+  "data": {
+    "invoiceNumber": null,
+    "issueDate": null,
+    "dueDate": null,
+    "deliveryDate": null,
+    "currency": null,
+    "seller": {
+      "name": null,
+      "street": null,
+      "postalCode": null,
+      "city": null,
+      "countryCode": null,
+      "vatId": null,
+      "taxNumber": null,
+      "electronicAddress": null,
+      "electronicAddressScheme": null,
+      "contactName": null,
+      "contactEmail": null,
+      "contactPhone": null
+    },
+    "buyer": {
+      "name": null,
+      "street": null,
+      "postalCode": null,
+      "city": null,
+      "countryCode": null,
+      "vatId": null,
+      "taxNumber": null,
+      "electronicAddress": null,
+      "electronicAddressScheme": null,
+      "contactName": null,
+      "contactEmail": null,
+      "contactPhone": null
+    },
+    "sellerIban": null,
+    "sellerBic": null,
+    "lineItems": [],
+    "netTotal": null,
+    "vatBreakdown": [],
+    "vatTotal": null,
+    "grossTotal": null,
+    "paymentTerms": null,
+    "buyerReference": null
+  }
+}

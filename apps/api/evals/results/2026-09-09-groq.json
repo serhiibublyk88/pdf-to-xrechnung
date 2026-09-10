@@ -1,0 +1,335 @@
+{
+  "generatedAt": "2026-09-09T16:05:28.267Z",
+  "provider": "groq",
+  "model": "openai/gpt-oss-20b",
+  "promptVersion": "v5",
+  "engines": {
+    "poppler": "pdftocairo version 26.06.0",
+    "tesseract": "tesseract 5.5.2"
+  },
+  "cases": [
+    {
+      "id": "001-clean-de",
+      "sourceType": "NATIVE",
+      "textCharCount": 731,
+      "expectedOutcome": "success",
+      "actualOutcome": "success",
+      "failureCode": null,
+      "durationMs": 2661,
+      "extractionDurationMs": 2278,
+      "inputTokens": 3077,
+      "outputTokens": 1458,
+      "mismatches": [],
+      "providerCalls": null
+    },
+    {
+      "id": "002-clean-en",
+      "sourceType": "NATIVE",
+      "textCharCount": 742,
+      "expectedOutcome": "success",
+      "actualOutcome": "needs_review",
+      "failureCode": null,
+      "durationMs": 3019,
+      "extractionDurationMs": 2782,
+      "inputTokens": 3078,
+      "outputTokens": 2009,
+      "mismatches": [
+        "002-clean-en vatBreakdown[0].exemptionReason: expected \"Reverse charge\", actual \"VAT 0%\"",
+        "002-clean-en sellerIban: expected \"GB29NWBK60161331926819\", actual null",
+        "002-clean-en lineItems[0].vatExemptionReason: expected \"Reverse charge\", actual \"VAT 0%\""
+      ],
+      "providerCalls": null
+    },
+    {
+      "id": "003-multipage-de",
+      "sourceType": "NATIVE",
+      "textCharCount": 837,
+      "expectedOutcome": "success",
+      "actualOutcome": "success",
+      "failureCode": null,
+      "durationMs": 3213,
+      "extractionDurationMs": 2868,
+      "inputTokens": 3139,
+      "outputTokens": 2168,
+      "mismatches": [],
+      "providerCalls": null
+    },
+    {
+      "id": "004-mixed-vat-de",
+      "sourceType": "NATIVE",
+      "textCharCount": 864,
+      "expectedOutcome": "success",
+      "actualOutcome": "success",
+      "failureCode": null,
+      "durationMs": 2821,
+      "extractionDurationMs": 2473,
+      "inputTokens": 3120,
+      "outputTokens": 1803,
+      "mismatches": [],
+      "providerCalls": null
+    },
+    {
+      "id": "005-missing-fields-de",
+      "sourceType": "NATIVE",
+      "textCharCount": 664,
+      "expectedOutcome": "needs_review",
+      "actualOutcome": "needs_review",
+      "failureCode": null,
+      "durationMs": 1952,
+      "extractionDurationMs": 1740,
+      "inputTokens": 3048,
+      "outputTokens": 1029,
+      "mismatches": [],
+      "providerCalls": null
+    },
+    {
+      "id": "006-document-discount-de",
+      "sourceType": "NATIVE",
+      "textCharCount": 789,
+      "expectedOutcome": "success",
+      "actualOutcome": "success",
+      "failureCode": null,
+      "durationMs": 3093,
+      "extractionDurationMs": 2760,
+      "inputTokens": 3086,
+      "outputTokens": 1628,
+      "mismatches": [
+        "006-document-discount-de paymentTerms: expected \"A document discount of 20.00 EUR is already included.\", actual \"A document discount of 20.00 EUR is already included. · IBAN: DE89370400440532013000 · BIC: —\""
+      ],
+      "providerCalls": null
+    },
+    {
+      "id": "007-many-lines-de",
+      "sourceType": "NATIVE",
+      "textCharCount": 2426,
+      "expectedOutcome": "success",
+      "actualOutcome": "success",
+      "failureCode": null,
+      "durationMs": 3608,
+      "extractionDurationMs": 3254,
+      "inputTokens": 3945,
+      "outputTokens": 2366,
+      "mismatches": [],
+      "providerCalls": null
+    },
+    {
+      "id": "008-small-amount-de",
+      "sourceType": "NATIVE",
+      "textCharCount": 649,
+      "expectedOutcome": "needs_review",
+      "actualOutcome": "needs_review",
+      "failureCode": null,
+      "durationMs": 2468,
+      "extractionDurationMs": 2215,
+      "inputTokens": 3047,
+      "outputTokens": 1343,
+      "mismatches": [],
+      "providerCalls": null
+    },
+    {
+      "id": "009-unusual-layout-de",
+      "sourceType": "NATIVE",
+      "textCharCount": 737,
+      "expectedOutcome": "success",
+      "actualOutcome": "success",
+      "failureCode": null,
+      "durationMs": 2752,
+      "extractionDurationMs": 2434,
+      "inputTokens": 3079,
+      "outputTokens": 1556,
+      "mismatches": [],
+      "providerCalls": null
+    },
+    {
+      "id": "010-repeating-chrome-de",
+      "sourceType": "NATIVE",
+      "textCharCount": 1156,
+      "expectedOutcome": "success",
+      "actualOutcome": "success",
+      "failureCode": null,
+      "durationMs": 3080,
+      "extractionDurationMs": 2738,
+      "inputTokens": 3214,
+      "outputTokens": 1650,
+      "mismatches": [],
+      "providerCalls": null
+    },
+    {
+      "id": "011-scan-clean-de",
+      "sourceType": "OCR",
+      "textCharCount": 687,
+      "expectedOutcome": "success",
+      "actualOutcome": "needs_review",
+      "failureCode": null,
+      "durationMs": 3824,
+      "extractionDurationMs": 2963,
+      "inputTokens": 3054,
+      "outputTokens": 2091,
+      "mismatches": [
+        "011-scan-clean-de seller.electronicAddressScheme: expected \"EM\", actual null",
+        "011-scan-clean-de buyer.electronicAddress: expected \"buyer-001@example.test\", actual \"buyer-001@ test\"",
+        "011-scan-clean-de buyer.electronicAddressScheme: expected \"EM\", actual null",
+        "011-scan-clean-de buyer.contactEmail: expected \"buchhaltung@kaeufer.example\", actual null"
+      ],
+      "providerCalls": null
+    },
+    {
+      "id": "012-scan-degraded-de",
+      "sourceType": "OCR",
+      "textCharCount": 712,
+      "expectedOutcome": "success",
+      "actualOutcome": "needs_review",
+      "failureCode": null,
+      "durationMs": 3553,
+      "extractionDurationMs": 2387,
+      "inputTokens": 3055,
+      "outputTokens": 1464,
+      "mismatches": [
+        "012-scan-degraded-de seller.contactPhone: expected \"+49 30 1234567\", actual \"+49 30\"",
+        "012-scan-degraded-de buyer.name: expected \"Kaeufer AG\", actual \"Kacufor AG\"",
+        "012-scan-degraded-de buyer.street: expected \"Kaeuferweg 5\", actual \"Kasuferweg 5\"",
+        "012-scan-degraded-de sellerIban: expected \"DE89370400440532013000\", actual null"
+      ],
+      "providerCalls": null
+    },
+    {
+      "id": "013-foreign-currency-en",
+      "sourceType": "NATIVE",
+      "textCharCount": 769,
+      "expectedOutcome": "success",
+      "actualOutcome": "success",
+      "failureCode": null,
+      "durationMs": 2974,
+      "extractionDurationMs": 2646,
+      "inputTokens": 3088,
+      "outputTokens": 1887,
+      "mismatches": [],
+      "providerCalls": null
+    },
+    {
+      "id": "014-long-descriptions-en",
+      "sourceType": "NATIVE",
+      "textCharCount": 943,
+      "expectedOutcome": "success",
+      "actualOutcome": "success",
+      "failureCode": null,
+      "durationMs": 2457,
+      "extractionDurationMs": 2134,
+      "inputTokens": 3104,
+      "outputTokens": 1416,
+      "mismatches": [],
+      "providerCalls": null
+    },
+    {
+      "id": "015-not-an-invoice-de",
+      "sourceType": "NATIVE",
+      "textCharCount": 158,
+      "expectedOutcome": "failed",
+      "actualOutcome": "failed",
+      "failureCode": "llm_no_usable_data",
+      "durationMs": 1035,
+      "extractionDurationMs": 813,
+      "inputTokens": 2832,
+      "outputTokens": 254,
+      "mismatches": [],
+      "providerCalls": null
+    },
+    {
+      "id": "016-unusable-scan-de",
+      "sourceType": "OCR",
+      "textCharCount": 0,
+      "expectedOutcome": "failed",
+      "actualOutcome": "failed",
+      "failureCode": "ocr_text_too_sparse",
+      "durationMs": 398,
+      "extractionDurationMs": null,
+      "inputTokens": null,
+      "outputTokens": null,
+      "mismatches": [],
+      "providerCalls": null
+    },
+    {
+      "id": "017-multipage-scan-de",
+      "sourceType": "OCR",
+      "textCharCount": 1374,
+      "expectedOutcome": "success",
+      "actualOutcome": "success",
+      "failureCode": null,
+      "durationMs": 3604,
+      "extractionDurationMs": 2068,
+      "inputTokens": 3311,
+      "outputTokens": 1221,
+      "mismatches": [
+        "017-multipage-scan-de buyer.electronicAddress: expected \"buyer-001@example.test\", actual \"buyer-001@ test\"",
+        "017-multipage-scan-de buyer.contactEmail: expected \"buchhaltung@kaeufer.example\", actual null"
+      ],
+      "providerCalls": null
+    },
+    {
+      "id": "018-illegible-scan-de",
+      "sourceType": "OCR",
+      "textCharCount": 579,
+      "expectedOutcome": "failed",
+      "actualOutcome": "failed",
+      "failureCode": "ocr_confidence_too_low",
+      "durationMs": 1170,
+      "extractionDurationMs": null,
+      "inputTokens": null,
+      "outputTokens": null,
+      "mismatches": [],
+      "providerCalls": null
+    }
+  ],
+  "falseSuccesses": 0,
+  "comparedCases": 16,
+  "metrics": {
+    "bySource": {
+      "native": {
+        "critical": {
+          "matched": 117,
+          "total": 117
+        },
+        "important": {
+          "matched": 400,
+          "total": 403
+        },
+        "lineFields": {
+          "matched": 367,
+          "total": 368
+        },
+        "lineCount": {
+          "matched": 13,
+          "total": 13
+        },
+        "conformance": {
+          "valid": 9,
+          "ready": 9
+        }
+      },
+      "ocr": {
+        "critical": {
+          "matched": 27,
+          "total": 27
+        },
+        "important": {
+          "matched": 83,
+          "total": 93
+        },
+        "lineFields": {
+          "matched": 24,
+          "total": 24
+        },
+        "lineCount": {
+          "matched": 3,
+          "total": 3
+        },
+        "conformance": {
+          "valid": 1,
+          "ready": 1
+        }
+      }
+    }
+  },
+  "tautological": false,
+  "metricsVersion": 2
+}

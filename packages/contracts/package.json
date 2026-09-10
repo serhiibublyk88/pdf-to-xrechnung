@@ -1,0 +1,71 @@
+{
+  "name": "@pdf-to-xrechnung/contracts",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./invoice-failure-definition": {
+      "types": "./dist/invoice-failure-definition.d.ts",
+      "import": "./dist/invoice-failure-definition.js",
+      "require": "./dist/invoice-failure-definition.js",
+      "default": "./dist/invoice-failure-definition.js"
+    },
+    "./invoice-data-definition": {
+      "types": "./dist/invoice-data-definition.d.ts",
+      "import": "./dist/invoice-data-definition.js",
+      "require": "./dist/invoice-data-definition.js",
+      "default": "./dist/invoice-data-definition.js"
+    },
+    "./review-result-definition": {
+      "types": "./dist/review-result-definition.d.ts",
+      "import": "./dist/review-result-definition.js",
+      "require": "./dist/review-result-definition.js",
+      "default": "./dist/review-result-definition.js"
+    },
+    "./review-input": {
+      "types": "./dist/review-input.d.ts",
+      "import": "./dist/review-input.js",
+      "require": "./dist/review-input.js",
+      "default": "./dist/review-input.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "lint": "eslint \"src/**/*.ts\"",
+    "lint:fix": "eslint \"src/**/*.ts\" --fix",
+    "typecheck": "tsc --noEmit",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
+  },
+  "dependencies": {
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.18.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.0.0",
+    "eslint": "^9.18.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.2",
+    "globals": "^17.0.0",
+    "jest": "^30.0.0",
+    "prettier": "^3.4.2",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.20.0"
+  },
+  "jest": {
+    "moduleFileExtensions": ["js", "json", "ts"],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.ts$",
+    "transform": { "^.+\\.(t|j)s$": "ts-jest" },
+    "testEnvironment": "node"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "name": "@pdf-to-xrechnung/web",
+  "version": "0.0.1",
+  "description": "Review UI for pdf-to-xrechnung",
+  "author": "Serhii Bublyk",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build --webpack",
+    "postbuild": "node scripts/prepare-standalone-assets.mjs",
+    "start": "node .next/standalone/apps/web/server.js",
+    "measure:bundle": "node scripts/measure-client-bundle.mjs",
+    "lint": "eslint \"app/**/*.{ts,tsx}\" \"lib/**/*.{ts,tsx}\" \"components/**/*.{ts,tsx}\" \"e2e/**/*.ts\" \"scripts/*.mjs\" \"*.ts\"",
+    "lint:fix": "eslint \"app/**/*.{ts,tsx}\" \"lib/**/*.{ts,tsx}\" \"components/**/*.{ts,tsx}\" \"e2e/**/*.ts\" \"scripts/*.mjs\" \"*.ts\" --fix",
+    "pretypecheck": "npm run build --prefix ../../packages/contracts",
+    "typecheck": "tsc --noEmit && tsc --noEmit -p e2e/tsconfig.json",
+    "pretest": "npm run build --prefix ../../packages/contracts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@pdf-to-xrechnung/contracts": "*",
+    "next": "16.3.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.4",
+    "@types/react-dom": "^19.2.4",
+    "eslint": "^9.18.0",
+    "eslint-config-next": "16.3.0",
+    "eslint-plugin-prettier": "^5.2.2",
+    "jsdom": "^25.0.1",
+    "prettier": "^3.4.2",
+    "tailwindcss": "^4.3.3",
+    "typescript-eslint": "^8.66.0",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.0"
+  }
+}

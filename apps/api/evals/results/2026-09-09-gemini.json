@@ -1,0 +1,332 @@
+{
+  "generatedAt": "2026-09-09T15:37:59.726Z",
+  "provider": "gemini",
+  "model": "gemini-3.5-flash-lite",
+  "promptVersion": "v5",
+  "engines": {
+    "poppler": "pdftocairo version 26.06.0",
+    "tesseract": "tesseract 5.5.2"
+  },
+  "cases": [
+    {
+      "id": "001-clean-de",
+      "sourceType": "NATIVE",
+      "textCharCount": 731,
+      "expectedOutcome": "success",
+      "actualOutcome": "success",
+      "failureCode": null,
+      "durationMs": 30657,
+      "extractionDurationMs": 30247,
+      "inputTokens": 1483,
+      "outputTokens": 658,
+      "mismatches": [],
+      "providerCalls": null
+    },
+    {
+      "id": "002-clean-en",
+      "sourceType": "NATIVE",
+      "textCharCount": 742,
+      "expectedOutcome": "success",
+      "actualOutcome": "needs_review",
+      "failureCode": null,
+      "durationMs": 9963,
+      "extractionDurationMs": 9718,
+      "inputTokens": 1470,
+      "outputTokens": 637,
+      "mismatches": [
+        "002-clean-en vatBreakdown[0].exemptionReason: expected \"Reverse charge\", actual null",
+        "002-clean-en sellerIban: expected \"GB29NWBK60161331926819\", actual null",
+        "002-clean-en lineItems[0].vatExemptionReason: expected \"Reverse charge\", actual null"
+      ],
+      "providerCalls": null
+    },
+    {
+      "id": "003-multipage-de",
+      "sourceType": "NATIVE",
+      "textCharCount": 837,
+      "expectedOutcome": "success",
+      "actualOutcome": "success",
+      "failureCode": null,
+      "durationMs": 44291,
+      "extractionDurationMs": 43898,
+      "inputTokens": 1559,
+      "outputTokens": 832,
+      "mismatches": [],
+      "providerCalls": null
+    },
+    {
+      "id": "004-mixed-vat-de",
+      "sourceType": "NATIVE",
+      "textCharCount": 864,
+      "expectedOutcome": "success",
+      "actualOutcome": "success",
+      "failureCode": null,
+      "durationMs": 35268,
+      "extractionDurationMs": 34891,
+      "inputTokens": 1529,
+      "outputTokens": 796,
+      "mismatches": [],
+      "providerCalls": null
+    },
+    {
+      "id": "005-missing-fields-de",
+      "sourceType": "NATIVE",
+      "textCharCount": 664,
+      "expectedOutcome": "needs_review",
+      "actualOutcome": "needs_review",
+      "failureCode": null,
+      "durationMs": 9859,
+      "extractionDurationMs": 9571,
+      "inputTokens": 1425,
+      "outputTokens": 594,
+      "mismatches": [],
+      "providerCalls": null
+    },
+    {
+      "id": "006-document-discount-de",
+      "sourceType": "NATIVE",
+      "textCharCount": 789,
+      "expectedOutcome": "success",
+      "actualOutcome": "success",
+      "failureCode": null,
+      "durationMs": 11005,
+      "extractionDurationMs": 10633,
+      "inputTokens": 1495,
+      "outputTokens": 672,
+      "mismatches": [],
+      "providerCalls": null
+    },
+    {
+      "id": "007-many-lines-de",
+      "sourceType": "NATIVE",
+      "textCharCount": 2426,
+      "expectedOutcome": "success",
+      "actualOutcome": "success",
+      "failureCode": null,
+      "durationMs": 8661,
+      "extractionDurationMs": 8269,
+      "inputTokens": 2616,
+      "outputTokens": 3321,
+      "mismatches": [],
+      "providerCalls": null
+    },
+    {
+      "id": "008-small-amount-de",
+      "sourceType": "NATIVE",
+      "textCharCount": 649,
+      "expectedOutcome": "needs_review",
+      "actualOutcome": "needs_review",
+      "failureCode": null,
+      "durationMs": 4662,
+      "extractionDurationMs": 4412,
+      "inputTokens": 1443,
+      "outputTokens": 612,
+      "mismatches": [],
+      "providerCalls": null
+    },
+    {
+      "id": "009-unusual-layout-de",
+      "sourceType": "NATIVE",
+      "textCharCount": 737,
+      "expectedOutcome": "success",
+      "actualOutcome": "success",
+      "failureCode": null,
+      "durationMs": 89640,
+      "extractionDurationMs": 89273,
+      "inputTokens": 1484,
+      "outputTokens": 655,
+      "mismatches": [],
+      "providerCalls": null
+    },
+    {
+      "id": "010-repeating-chrome-de",
+      "sourceType": "NATIVE",
+      "textCharCount": 1156,
+      "expectedOutcome": "success",
+      "actualOutcome": "success",
+      "failureCode": null,
+      "durationMs": 15281,
+      "extractionDurationMs": 14922,
+      "inputTokens": 1659,
+      "outputTokens": 753,
+      "mismatches": [],
+      "providerCalls": null
+    },
+    {
+      "id": "011-scan-clean-de",
+      "sourceType": "OCR",
+      "textCharCount": 687,
+      "expectedOutcome": "success",
+      "actualOutcome": "success",
+      "failureCode": null,
+      "durationMs": 17274,
+      "extractionDurationMs": 16323,
+      "inputTokens": 1454,
+      "outputTokens": 648,
+      "mismatches": [
+        "011-scan-clean-de buyer.electronicAddress: expected \"buyer-001@example.test\", actual \"buyer-001@ test\"",
+        "011-scan-clean-de buyer.contactEmail: expected \"buchhaltung@kaeufer.example\", actual null"
+      ],
+      "providerCalls": null
+    },
+    {
+      "id": "012-scan-degraded-de",
+      "sourceType": "OCR",
+      "textCharCount": 712,
+      "expectedOutcome": "success",
+      "actualOutcome": "needs_review",
+      "failureCode": null,
+      "durationMs": 3936,
+      "extractionDurationMs": 2860,
+      "inputTokens": 1449,
+      "outputTokens": 628,
+      "mismatches": [
+        "012-scan-degraded-de buyer.name: expected \"Kaeufer AG\", actual \"Kacufor AG\"",
+        "012-scan-degraded-de buyer.street: expected \"Kaeuferweg 5\", actual \"Kasuferweg 5\"",
+        "012-scan-degraded-de buyer.electronicAddress: expected \"buyer-001@example.test\", actual null",
+        "012-scan-degraded-de buyer.electronicAddressScheme: expected \"EM\", actual null",
+        "012-scan-degraded-de sellerIban: expected \"DE89370400440532013000\", actual null"
+      ],
+      "providerCalls": null
+    },
+    {
+      "id": "013-foreign-currency-en",
+      "sourceType": "NATIVE",
+      "textCharCount": 769,
+      "expectedOutcome": "success",
+      "actualOutcome": "success",
+      "failureCode": null,
+      "durationMs": 11464,
+      "extractionDurationMs": 11087,
+      "inputTokens": 1486,
+      "outputTokens": 657,
+      "mismatches": [],
+      "providerCalls": null
+    },
+    {
+      "id": "014-long-descriptions-en",
+      "sourceType": "NATIVE",
+      "textCharCount": 943,
+      "expectedOutcome": "success",
+      "actualOutcome": "success",
+      "failureCode": null,
+      "durationMs": 2973,
+      "extractionDurationMs": 2595,
+      "inputTokens": 1512,
+      "outputTokens": 690,
+      "mismatches": [],
+      "providerCalls": null
+    },
+    {
+      "id": "015-not-an-invoice-de",
+      "sourceType": "NATIVE",
+      "textCharCount": 158,
+      "expectedOutcome": "failed",
+      "actualOutcome": "failed",
+      "failureCode": "llm_no_usable_data",
+      "durationMs": 39885,
+      "extractionDurationMs": 39661,
+      "inputTokens": 1159,
+      "outputTokens": 317,
+      "mismatches": [],
+      "providerCalls": null
+    },
+    {
+      "id": "016-unusable-scan-de",
+      "sourceType": "OCR",
+      "textCharCount": 0,
+      "expectedOutcome": "failed",
+      "actualOutcome": "failed",
+      "failureCode": "ocr_text_too_sparse",
+      "durationMs": 403,
+      "extractionDurationMs": null,
+      "inputTokens": null,
+      "outputTokens": null,
+      "mismatches": [],
+      "providerCalls": null
+    },
+    {
+      "id": "017-multipage-scan-de",
+      "sourceType": "OCR",
+      "textCharCount": 1374,
+      "expectedOutcome": "success",
+      "actualOutcome": "success",
+      "failureCode": null,
+      "durationMs": 49037,
+      "extractionDurationMs": 47442,
+      "inputTokens": 1791,
+      "outputTokens": 649,
+      "mismatches": [
+        "017-multipage-scan-de buyer.electronicAddress: expected \"buyer-001@example.test\", actual \"buyer-001@ test\"",
+        "017-multipage-scan-de buyer.contactEmail: expected \"buchhaltung@kaeufer.example\", actual null"
+      ],
+      "providerCalls": null
+    },
+    {
+      "id": "018-illegible-scan-de",
+      "sourceType": "OCR",
+      "textCharCount": 579,
+      "expectedOutcome": "failed",
+      "actualOutcome": "failed",
+      "failureCode": "ocr_confidence_too_low",
+      "durationMs": 1242,
+      "extractionDurationMs": null,
+      "inputTokens": null,
+      "outputTokens": null,
+      "mismatches": [],
+      "providerCalls": null
+    }
+  ],
+  "falseSuccesses": 0,
+  "comparedCases": 16,
+  "metrics": {
+    "bySource": {
+      "native": {
+        "critical": {
+          "matched": 117,
+          "total": 117
+        },
+        "important": {
+          "matched": 401,
+          "total": 403
+        },
+        "lineFields": {
+          "matched": 367,
+          "total": 368
+        },
+        "lineCount": {
+          "matched": 13,
+          "total": 13
+        },
+        "conformance": {
+          "valid": 9,
+          "ready": 9
+        }
+      },
+      "ocr": {
+        "critical": {
+          "matched": 27,
+          "total": 27
+        },
+        "important": {
+          "matched": 84,
+          "total": 93
+        },
+        "lineFields": {
+          "matched": 24,
+          "total": 24
+        },
+        "lineCount": {
+          "matched": 3,
+          "total": 3
+        },
+        "conformance": {
+          "valid": 2,
+          "ready": 2
+        }
+      }
+    }
+  },
+  "tautological": false,
+  "metricsVersion": 2
+}
